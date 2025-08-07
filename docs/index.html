@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProBiz Documentation</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 40px; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { 
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .doc-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 4px solid #28a745;
+        }
+        .doc-section h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .doc-list {
+            list-style: none;
+            padding: 0;
+        }
+        .doc-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .doc-list li:last-child {
+            border-bottom: none;
+        }
+        .doc-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .doc-link:hover {
+            text-decoration: underline;
+        }
+        .code-block {
+            background: #f1f3f4;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back-link">← Back to Home</a>
+        <h1>📚 Documentation</h1>
+        
+        <div class="doc-section">
+            <h3>🚀 Getting Started</h3>
+            <ul class="doc-list">
+                <li><a href="#" class="doc-link">Server Setup Guide</a> - How to configure your Oracle Linux server</li>
+                <li><a href="#" class="doc-link">Development Workflow</a> - Editing on tablet → Termux → Server</li>
+                <li><a href="#" class="doc-link">Nginx Configuration</a> - Web server setup and configuration</li>
+            </ul>
+        </div>
+
+        <div class="doc-section">
+            <h3>💡 Project Ideas</h3>
+            <ul class="doc-list">
+                <li><strong>🎮 Web Games</strong> - HTML5 Canvas games like the drawing pad</li>
+                <li><strong>📱 Web Apps</strong> - Progressive web applications</li>
+                <li><strong>🔧 Utilities</strong> - Useful tools and calculators</li>
+                <li><strong>📊 Data Visualizations</strong> - Charts and interactive displays</li>
+            </ul>
+        </div>
+
+        <div class="doc-section">
+            <h3>🔧 Development Tips</h3>
+            <div class="code-block">
+# Quick deployment from Termux
+scp myfile.html oracle-instance-probiz:/home/opc/ProBiz/websites/games/
+ssh oracle-instance-probiz "./deploy.sh"
+            </div>
+            <p>Use the deployment script to quickly update permissions and reload nginx after uploading new files.</p>
+        </div>
+
+        <div class="doc-section">
+            <h3>📁 Directory Structure</h3>
+            <div class="code-block">
+/home/opc/ProBiz/
+├── websites/
+│   ├── main/public/     # Main website files
+│   ├── games/           # Web games
+│   ├── project1/        # Individual projects
+│   └── project2/
+├── nodejs/              # Node.js applications
+├── shared/              # Shared CSS/JS/images
+└── docs/                # Documentation files
+            </div>
+        </div>
+    </div>
+</body>
+</html>
