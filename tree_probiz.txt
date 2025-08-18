@@ -1,0 +1,332 @@
+.
+├── deploy.sh
+├── duckdns
+│   ├── check_status.sh
+│   ├── duck.log
+│   ├── duck.sh
+│   ├── manual_update.sh
+│   ├── setup_info.txt
+│   └── uninstall.sh
+├── duckdns_setup.sh
+├── duck_setup.sh
+├── ProBiz
+│   ├── backups
+│   ├── directory_structure.txt
+│   ├── docs
+│   │   ├── index.html
+│   │   ├── project-ideas.md
+│   │   ├── README.md
+│   │   └── setup-notes.md
+│   ├── logs
+│   ├── nodejs
+│   │   ├── api-server
+│   │   ├── index.html
+│   │   ├── utilities
+│   │   └── websocket-apps
+│   ├── scripts
+│   │   ├── backup.sh
+│   │   ├── deploy.sh
+│   │   ├── dev-helper.sh
+│   │   ├── execs
+│   │   │   ├── bulk_copy2or.sh
+│   │   │   ├── bulk_copy_silent2or.sh
+│   │   │   ├── copy2nb.sh
+│   │   │   ├── copy2or.sh
+│   │   │   ├── copyfile2nb.sh
+│   │   │   ├── copy_file.sh
+│   │   │   ├── copy_menu.sh
+│   │   │   ├── copynbto.sh
+│   │   │   ├── copyonefile.sh
+│   │   │   ├── file_perms_manager.sh
+│   │   │   ├── file_sync_public.sh
+│   │   │   ├── fix-cert-perms.sh
+│   │   │   ├── move_logs.sh
+│   │   │   ├── nginx_cheatsheet_20250612_050204.sh
+│   │   │   ├── nginx_menu_script.sh
+│   │   │   ├── ng.sh
+│   │   │   ├── prepare-certs-for-backup.sh
+│   │   │   ├── proot_menu.sh
+│   │   │   └── search_files.sh
+│   │   ├── file_perms_manager.sh
+│   │   ├── nginx_cheatsheet_20250612_050204.sh
+│   │   ├── nginx_menu_script.sh
+│   │   ├── ng.sh
+│   │   ├── probiz_aliases.sh
+│   │   ├── probiz_aliases_termux.sh
+│   │   ├── probiz_file_manager.sh
+│   │   ├── probiz_manager.sh
+│   │   ├── probiz_sync_script.sh
+│   │   ├── search_replace_utility.sh
+│   │   ├── server-setup.sh
+│   │   ├── setup-ol9.sh
+│   │   ├── setup-project-structure.sh
+│   │   ├── upload-from-termux.sh
+│   │   └── upload-to-server.sh
+│   ├── shared
+│   │   ├── css
+│   │   │   └── main.css
+│   │   ├── images
+│   │   ├── js
+│   │   │   └── main.js
+│   │   └── templates
+│   └── websites
+│       ├── EJ-EV
+│       │   ├── AlphabetSearch
+│       │   │   ├── AlphabetCheck.html
+│       │   │   ├── AlphabetSearch - Copy.html
+│       │   │   ├── AlphabetSearch.html
+│       │   │   └── background.jpg
+│       │   ├── AnimalSoundsMatch
+│       │   │   ├── AnimalSoundsMatch.html
+│       │   │   ├── background.jpg
+│       │   │   ├── images
+│       │   │   │   ├── card-back.jpg
+│       │   │   │   ├── card-back.webp
+│       │   │   │   ├── cat.jpg
+│       │   │   │   ├── cat.webp
+│       │   │   │   ├── cow.jpg
+│       │   │   │   ├── cow.webp
+│       │   │   │   ├── dog.jpg
+│       │   │   │   ├── dog.webp
+│       │   │   │   ├── match.jpg
+│       │   │   │   ├── pig.jpg
+│       │   │   │   ├── pig.webp
+│       │   │   │   └── win.jpg
+│       │   │   ├── scripts.js
+│       │   │   ├── sounds
+│       │   │   │   ├── cat.mp3
+│       │   │   │   ├── cow.mp3
+│       │   │   │   ├── cow-pee.mp3
+│       │   │   │   ├── cow.wav
+│       │   │   │   ├── dog.mp3
+│       │   │   │   ├── match.mp3
+│       │   │   │   ├── pig.mp3
+│       │   │   │   ├── pig.wav
+│       │   │   │   └── win.mp3
+│       │   │   └── styles.css
+│       │   ├── AnimalSoundsMatch - Copy
+│       │   │   ├── AnimalSoundsMatch.html
+│       │   │   ├── background.jpg
+│       │   │   ├── images
+│       │   │   │   ├── card-back.jpg
+│       │   │   │   ├── card-back.webp
+│       │   │   │   ├── cat.jpg
+│       │   │   │   ├── cat.webp
+│       │   │   │   ├── cow.jpg
+│       │   │   │   ├── cow.webp
+│       │   │   │   ├── dog.jpg
+│       │   │   │   ├── dog.webp
+│       │   │   │   ├── match.jpg
+│       │   │   │   ├── pig.jpg
+│       │   │   │   ├── pig.webp
+│       │   │   │   └── win.jpg
+│       │   │   ├── scripts (conflict 2025-03-03-20-05-43).js
+│       │   │   ├── scripts.js
+│       │   │   ├── sounds
+│       │   │   │   ├── cat.mp3
+│       │   │   │   ├── cow.mp3
+│       │   │   │   ├── cow-pee.mp3
+│       │   │   │   ├── cow.wav
+│       │   │   │   ├── dog.mp3
+│       │   │   │   ├── match.mp3
+│       │   │   │   ├── pig.mp3
+│       │   │   │   ├── pig.wav
+│       │   │   │   └── win.mp3
+│       │   │   └── styles.css
+│       │   ├── AnimalSoundsMatch-Grimore
+│       │   │   ├── AnimalSoundsMatch.html
+│       │   │   ├── background.jpg
+│       │   │   ├── images
+│       │   │   │   ├── cat.jpg
+│       │   │   │   ├── cat.webp
+│       │   │   │   ├── cow.jpg
+│       │   │   │   ├── cow.webp
+│       │   │   │   ├── dog.jpg
+│       │   │   │   ├── dog.webp
+│       │   │   │   ├── pig.jpg
+│       │   │   │   └── pig.webp
+│       │   │   ├── scripts.js
+│       │   │   ├── sounds
+│       │   │   │   ├── cat.mp3
+│       │   │   │   ├── cow.mp3
+│       │   │   │   ├── cow.wav
+│       │   │   │   ├── dog.mp3
+│       │   │   │   ├── pig.mp3
+│       │   │   │   └── pig.wav
+│       │   │   └── styles.css
+│       │   ├── AnimalSoundsMatch-Grimore - Copy
+│       │   │   ├── AnimalSoundsMatch.html
+│       │   │   ├── background.jpg
+│       │   │   ├── images
+│       │   │   │   ├── cat.jpg
+│       │   │   │   ├── cat.webp
+│       │   │   │   ├── cow.jpg
+│       │   │   │   ├── cow.webp
+│       │   │   │   ├── dog.jpg
+│       │   │   │   ├── dog.webp
+│       │   │   │   ├── pig.jpg
+│       │   │   │   └── pig.webp
+│       │   │   ├── scripts.js
+│       │   │   ├── sounds
+│       │   │   │   ├── cat.mp3
+│       │   │   │   ├── cow.mp3
+│       │   │   │   ├── cow.wav
+│       │   │   │   ├── dog.mp3
+│       │   │   │   ├── pig.mp3
+│       │   │   │   └── pig.wav
+│       │   │   └── styles.css
+│       │   ├── background.jpeg
+│       │   ├── Backgrounds
+│       │   │   ├── background1 (2).jpg
+│       │   │   ├── background1.jpg
+│       │   │   ├── background (2).jpeg
+│       │   │   ├── background3.jpeg
+│       │   │   ├── background5.jpeg
+│       │   │   ├── background6.jpg
+│       │   │   └── background7.jpg
+│       │   ├── Bubbles
+│       │   │   ├── background.jpg
+│       │   │   ├── Bubbles.html
+│       │   │   └── pop-94319.mp3
+│       │   ├── Maze
+│       │   │   ├── background.jpg
+│       │   │   └── Maze.html
+│       │   ├── menu.html
+│       │   ├── Scribble
+│       │   │   ├── app.js
+│       │   │   ├── images
+│       │   │   │   ├── background.jpg
+│       │   │   │   ├── card-back.jpg
+│       │   │   │   ├── match.jpg
+│       │   │   │   ├── pic10.png
+│       │   │   │   ├── pic11.png
+│       │   │   │   ├── pic12.png
+│       │   │   │   ├── pic13.png
+│       │   │   │   ├── pic14.png
+│       │   │   │   ├── pic1.jpg
+│       │   │   │   ├── pic2.jpg
+│       │   │   │   ├── pic3.jpg
+│       │   │   │   ├── pic4.jpg
+│       │   │   │   ├── pic5.jpg
+│       │   │   │   ├── pic6.jpg
+│       │   │   │   ├── pic7.jpg
+│       │   │   │   ├── pic8.jpg
+│       │   │   │   ├── pic9.png
+│       │   │   │   └── win.jpg
+│       │   │   ├── scribble.html
+│       │   │   └── Scribble.html
+│       │   ├── speakText
+│       │   │   ├── background.jpg
+│       │   │   ├── speakText.html
+│       │   │   └── speakText.js
+│       │   └── Trace
+│       │       ├── background.jpg
+│       │       ├── Trace (2).html
+│       │       └── Trace.html
+│       ├── games
+│       │   ├── asteroids.html
+│       │   ├── flight_game.html
+│       │   ├── game1
+│       │   ├── game2
+│       │   ├── kaleidescopeDrawClaude.html
+│       │   ├── kaleidoscopeCameraClaud.html
+│       │   ├── kids_drawing_pad.html
+│       │   ├── LetterFrequencyCounter.html
+│       │   ├── local_storage.html
+│       │   ├── maze_game.html
+│       │   ├── pacman_game.html
+│       │   ├── pong.html
+│       │   ├── sky_adventure_flight_game.html
+│       │   ├── snake_game.html
+│       │   ├── space_invaders.html
+│       │   ├── tetris.html
+│       │   └── TicTacToe.html
+│       ├── index.html
+│       ├── main
+│       │   ├── config
+│       │   ├── public
+│       │   │   ├── css
+│       │   │   ├── index.html
+│       │   │   ├── index_orig.html
+│       │   │   └── js
+│       │   └── src
+│       ├── project1
+│       ├── project2
+│       ├── projects
+│       │   └── index.html
+│       └── utility
+│           ├── LetterFrequencyCounter.html
+│           └── local_storage.html
+├── ProBiz_2507260827
+│   ├── backups
+│   ├── docs
+│   │   ├── project-ideas.md
+│   │   ├── README.md
+│   │   └── setup-notes.md
+│   ├── logs
+│   ├── nodejs
+│   │   ├── api-server
+│   │   ├── utilities
+│   │   └── websocket-apps
+│   ├── scripts
+│   │   ├── backup.sh
+│   │   ├── deploy.sh
+│   │   ├── dev-helper.sh
+│   │   ├── execs
+│   │   │   ├── bulk_copy2or.sh
+│   │   │   ├── bulk_copy_silent2or.sh
+│   │   │   ├── copy2nb.sh
+│   │   │   ├── copy2or.sh
+│   │   │   ├── copyfile2nb.sh
+│   │   │   ├── copy_file.sh
+│   │   │   ├── copy_menu.sh
+│   │   │   ├── copynbto.sh
+│   │   │   ├── copyonefile.sh
+│   │   │   ├── file_perms_manager.sh
+│   │   │   ├── file_sync_public.sh
+│   │   │   ├── fix-cert-perms.sh
+│   │   │   ├── move_logs.sh
+│   │   │   ├── nginx_cheatsheet_20250612_050204.sh
+│   │   │   ├── nginx_menu_script.sh
+│   │   │   ├── ng.sh
+│   │   │   ├── prepare-certs-for-backup.sh
+│   │   │   ├── proot_menu.sh
+│   │   │   └── search_files.sh
+│   │   ├── nginx_cheatsheet_20250612_050204.sh
+│   │   ├── nginx_menu_script.sh
+│   │   ├── ng.sh
+│   │   ├── probiz_aliases.sh
+│   │   ├── probiz_aliases_termux.sh
+│   │   ├── probiz_file_manager.sh
+│   │   ├── probiz_manager.sh
+│   │   ├── probiz_sync_script.sh
+│   │   ├── search_replace_utility.sh
+│   │   ├── server-setup.sh
+│   │   ├── setup-ol9.sh
+│   │   ├── setup-project-structure.sh
+│   │   ├── upload-from-termux.sh
+│   │   └── upload-to-server.sh
+│   ├── shared
+│   │   ├── css
+│   │   │   └── main.css
+│   │   ├── images
+│   │   ├── js
+│   │   │   └── main.js
+│   │   └── templates
+│   └── websites
+│       ├── games
+│       │   ├── game1
+│       │   └── game2
+│       ├── main
+│       │   ├── config
+│       │   ├── public
+│       │   │   └── index.html
+│       │   └── src
+│       ├── project1
+│       └── project2
+├── security-check.sh
+├── setup-ol9.sh
+├── setup-server.sh
+└── tree.txt
+
+76 directories, 253 files

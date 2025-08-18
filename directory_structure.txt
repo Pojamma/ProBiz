@@ -1,0 +1,31 @@
+/home/opc/
+├── ProBiz/                          # Your main project directory
+│   ├── websites/                    # Web projects
+│   │   ├── main/                   # Your main personal website
+│   │   │   ├── public/             # Static files (HTML, CSS, JS, images)
+│   │   │   ├── src/                # Source files
+│   │   │   └── config/             # Configuration files
+│   │   ├── project1/               # Individual project folders
+│   │   ├── project2/
+│   │   └── games/                  # Web-based games
+│   │       ├── game1/
+│   │       └── game2/
+│   ├── nodejs/                     # Node.js applications
+│   │   ├── api-server/             # REST APIs
+│   │   ├── websocket-apps/         # Real-time applications
+│   │   └── utilities/              # Node.js utility scripts
+│   ├── shared/                     # Shared resources
+│   │   ├── css/                    # Common stylesheets
+│   │   ├── js/                     # Shared JavaScript libraries
+│   │   ├── images/                 # Common images/assets
+│   │   └── templates/              # HTML templates
+│   ├── scripts/                    # Server management scripts
+│   │   ├── deploy.sh              # Deployment scripts
+│   │   ├── backup.sh              # Backup scripts
+│   │   └── server-setup.sh        # Server configuration scripts
+│   ├── logs/                       # Application logs
+│   ├── backups/                    # Local backups
+│   └── docs/                       # Project documentation
+│       ├── README.md
+│       ├── setup-notes.md
+│       └── project-ideas.md

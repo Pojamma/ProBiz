@@ -1,0 +1,120 @@
+body {
+    background-color: #ccffcc;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid #1A3301;
+    border-radius: 5px;
+}
+
+table {
+    margin: 0 auto;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#date {
+    font-size: 16px;
+    margin-top: 0;
+    text-align: center;
+    color: white;
+    background-color: #172D00;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#title {
+    text-align: left;
+}
+
+#sun, #moon, #moonphase, #location {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: left;
+    color: white;
+    background-color: #1E6300;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #1A3301;
+}
+
+#help {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    background-color: #1A3301;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#help h4 {
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#help p {
+    color: white;
+    margin-top: 15px;
+    text-align: left;
+    font-style: italic;
+}
+
+td, tr, th {
+    border: 1px solid white;
+    text-align: left;
+    color: white;
+    padding: 8px;
+}
+
+th {
+    background-color: rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 5px;
+    }
+    
+    #map {
+        height: 300px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    td, tr, th {
+        padding: 5px;
+    }
+}
+
+/* Loading indicator */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #1A3301;
+    font-weight: bold;
+}
+
+/* Error message */
+.error {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: center;
+}

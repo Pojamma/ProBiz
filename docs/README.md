@@ -1,1 +1,0 @@
-Mostly vibe-coded games using chatGPT and Claude for myself the kids. 

@@ -1,9 +1,14 @@
-# ProBiz Project .gitignore
-secure-docs/
+# Ignore all files in ProBiz root
+ProBiz/*
+
+# But don't ignore ProBiz subdirectories
+!ProBiz/*/
+
 scripts/
+nginx*
 *.sh
 
-
+# ProBiz Project .gitignore
 
 # ============================================
 # NODE.JS / NPM
