@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '..', 'websites')));
 
 // API endpoint to provide Google Maps API key
 app.get('/api/maps-key', (req, res) => {
@@ -24,7 +24,7 @@ app.get('/api/maps-key', (req, res) => {
 
 // Serve the main SunCalc page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'suncalc.html'));
+    res.sendFile(path.join(__dirname, '..', 'websites', 'suncalc', 'suncalc.html'));
 });
 
 // Health check endpoint
