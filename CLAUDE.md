@@ -85,7 +85,8 @@ The server requires:
 - Optional: Nginx for production deployment with SSL certificates
 
 ## Development Workflow
-1. Most changes involve editing standalone HTML applications
-2. For SunCalc or API changes, modify `src/server.js` and restart with `npm run dev`
-3. Static assets are served directly without build process
-4. Use deployment scripts in `scripts/` directory for server management
+1. **ALWAYS create a new branch before making changes** - Use `git checkout -b feature/description` after any commit
+2. Most changes involve editing standalone HTML applications
+3. For SunCalc or API changes, modify `src/server.js` and restart with `npm run dev`
+4. Static assets are served directly without build process
+5. Don't use scripts in `scripts/` directory as they are for me.
