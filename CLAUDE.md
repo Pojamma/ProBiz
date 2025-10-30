@@ -84,6 +84,26 @@ The server requires:
 - Google Maps API key in environment variables
 - Optional: Nginx for production deployment with SSL certificates
 
+### SSL Certificate Management
+The production deployment uses Let's Encrypt certificates managed by certbot:
+
+**Certificate Details:**
+- Domain: `probiz.duckdns.org`
+- Certificate location: `/etc/letsencrypt/live/probiz.duckdns.org/`
+- Expires: Every 90 days (automatically renewed)
+- Challenge method: HTTP-01 via webroot (`/home/opc/ProBiz/websites/main/public/.well-known/`)
+
+**Auto-Renewal:**
+- Certbot automatically renews certificates ~30 days before expiration
+- Nginx configuration allows `.well-known/acme-challenge/` access for validation
+- Manual renewal: `sudo /usr/local/bin/certbot renew`
+- Test renewal: `sudo /usr/local/bin/certbot renew --dry-run`
+
+**Important Notes:**
+- Nginx config at `/etc/nginx/conf.d/probiz.conf` includes proper `.well-known` handling
+- DuckDNS must point to correct server IP for HTTP-01 challenges to work
+- Certificate files are symlinked and auto-updated during renewal
+
 ## Development Workflow
 1. **ALWAYS create a new branch before making changes** - Use `git checkout -b feature/description` after any commit
 2. Most changes involve editing standalone HTML applications
