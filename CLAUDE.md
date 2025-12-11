@@ -78,6 +78,14 @@ Most applications are standalone HTML files that can be served directly. The Exp
 - Shared resources (p5.js, Eruda) are centralized in `/shared/js/`
 - Games use consistent file organization patterns
 
+### File Permissions
+**IMPORTANT:** When adding new files to `websites/` directories, ensure proper permissions for Nginx to serve them:
+- Use `chmod 660` for HTML, CSS, JS files (read/write for owner and group)
+- Command: `chmod 660 /path/to/newfile.html`
+- Verify with: `ls -la /path/to/newfile.html`
+- Correct format: `-rw-rw----` (660)
+- Without group read permissions, Nginx will return 403 Forbidden errors
+
 ### Environment Setup
 The server requires:
 - Node.js 14.0.0 or higher
