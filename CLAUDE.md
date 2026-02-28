@@ -96,21 +96,29 @@ The server requires:
 The production deployment uses Let's Encrypt certificates managed by certbot:
 
 **Certificate Details:**
-- Domain: `probiz.duckdns.org`
-- Certificate location: `/etc/letsencrypt/live/probiz.duckdns.org/`
+- `probiz.duckdns.org` — config: `/etc/nginx/conf.d/probiz.conf`, webroot: `/home/opc/ProBiz/websites/main/public`
+- `help.pojammaapps.com` — config: `/etc/nginx/conf.d/jsoneditor-help.conf`, webroot: `/var/www/letsencrypt`
+- Certificates stored in `/etc/letsencrypt/live/<domain>/`
 - Expires: Every 90 days (automatically renewed)
-- Challenge method: HTTP-01 via webroot (`/home/opc/ProBiz/websites/main/public/.well-known/`)
+- Challenge method: HTTP-01 via webroot
 
 **Auto-Renewal:**
-- Certbot automatically renews certificates ~30 days before expiration
-- Nginx configuration allows `.well-known/acme-challenge/` access for validation
+- Cron job runs daily at 2 AM: `0 2 * * * /usr/local/bin/certbot renew --quiet --nginx`
 - Manual renewal: `sudo /usr/local/bin/certbot renew`
+- Force immediate renewal: `sudo /usr/local/bin/certbot renew --cert-name <domain> --force-renewal --no-random-sleep-on-renew`
 - Test renewal: `sudo /usr/local/bin/certbot renew --dry-run`
 
+**Nginx ACME Challenge Configuration:**
+Both nginx configs require two things for Let's Encrypt HTTP-01 validation to work:
+1. **HTTP block**: A `location /.well-known/acme-challenge/` with the correct webroot `root` directive (must match the certbot `[[webroot_map]]` in `/etc/letsencrypt/renewal/<domain>.conf`)
+2. **HTTPS block**: A `location ^~ /.well-known/acme-challenge/` **before** the `location ~ /\.` hidden files deny rule — the `^~` prefix ensures it takes priority over the regex deny
+
+Without the HTTPS exception, the HTTP-to-HTTPS redirect causes Let's Encrypt to hit the hidden files deny rule and get a 403.
+
 **Important Notes:**
-- Nginx config at `/etc/nginx/conf.d/probiz.conf` includes proper `.well-known` handling
 - DuckDNS must point to correct server IP for HTTP-01 challenges to work
 - Certificate files are symlinked and auto-updated during renewal
+- Do not use `\$` in nginx `return` directives — it produces a literal backslash in the redirect URL
 
 ## Development Workflow
 1. **ALWAYS create a new branch before making changes** - Use `git checkout -b feature/description` after any commit
