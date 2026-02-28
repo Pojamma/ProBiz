@@ -126,3 +126,8 @@ Without the HTTPS exception, the HTTP-to-HTTPS redirect causes Let's Encrypt to 
 3. For SunCalc or API changes, modify `src/server.js` and restart with `npm run dev`
 4. Static assets are served directly without build process
 5. Don't use scripts in `scripts/` directory as they are for me.
+
+## End-of-Session Protocol
+At the end of every session, always:
+1. **Update `sessions.md`** in the project root — add a new entry using the date and time as the session header (e.g., `## Session: YYYY-MM-DD HH:MM GMT`) with a summary of what was done
+2. **Commit and push to GitHub** — include `sessions.md` and any other modified files
