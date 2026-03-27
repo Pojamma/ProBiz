@@ -2,6 +2,17 @@
 
 ---
 
+## Session: 2026-03-27 GMT
+
+### SunCalc Removal
+- Removed SunCalc menu entry from `websites/main/public/index.html`
+- Deleted entire `websites/suncalc/` directory (including API key file and all app files)
+- Updated `src/server.js`: removed `/api/maps-key` Google Maps endpoint and SunCalc default route (`/`)
+- Updated `package.json`: removed "suncalc" from description, keywords, and npm scripts
+- Updated `CLAUDE.md`: removed all SunCalc references from architecture docs
+
+---
+
 ## Session: 2026-02-28 02:30 GMT
 
 ### Weather App Removal

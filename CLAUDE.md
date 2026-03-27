@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ProBiz is a personal collection of web-based games, utilities, and tools primarily created for entertainment and educational purposes. The project consists of standalone HTML applications, a Node.js/Express server for specific features like SunCalc, and various utility scripts for deployment and maintenance.
+ProBiz is a personal collection of web-based games, utilities, and tools primarily created for entertainment and educational purposes. The project consists of standalone HTML applications, a Node.js/Express server for static file serving, and various utility scripts for deployment and maintenance.
 
 ## Development Commands
 
@@ -14,25 +14,18 @@ npm run dev
 
 # Start the production server
 npm start
-
-# Start the SunCalc-specific server
-npm run suncalc
 ```
 
 ## Architecture
 
 ### Server Architecture (`src/server.js`)
 - Express.js server serving static files from the `websites/` directory
-- Main purpose is to serve the SunCalc application with Google Maps API integration
-- Provides `/api/maps-key` endpoint to securely serve Google Maps API keys
 - Health check endpoint at `/health`
-- Serves SunCalc as the default route (`/`)
 
 ### Website Structure
 The project is organized into several distinct categories:
 
 #### Main Applications
-- **SunCalc** (`websites/suncalc/`): Astronomical calculator using Google Maps API for location selection
 - **Main Portal** (`websites/main/public/index.html`): "Distraction Central" - categorized menu system for all applications
 
 #### Games (`websites/games/`)
@@ -65,11 +58,9 @@ The project is organized into several distinct categories:
 ### Static File Serving
 Most applications are standalone HTML files that can be served directly. The Express server primarily handles:
 1. Static file serving for all websites
-2. API endpoints for external service integration (Google Maps)
-3. Development features like Eruda debugger integration
+2. Development features like Eruda debugger integration
 
 ### Security Considerations
-- API keys are served through server endpoints, not embedded in client code
 - Nginx configuration includes comprehensive security headers and rate limiting
 - Authentication is configured for sensitive areas like `/docs/` and `/nodejs/`
 
@@ -89,7 +80,6 @@ Most applications are standalone HTML files that can be served directly. The Exp
 ### Environment Setup
 The server requires:
 - Node.js 14.0.0 or higher
-- Google Maps API key in environment variables
 - Optional: Nginx for production deployment with SSL certificates
 
 ### SSL Certificate Management
@@ -123,7 +113,7 @@ Without the HTTPS exception, the HTTP-to-HTTPS redirect causes Let's Encrypt to 
 ## Development Workflow
 1. **ALWAYS create a new branch before making changes** - Use `git checkout -b feature/description` after any commit
 2. Most changes involve editing standalone HTML applications
-3. For SunCalc or API changes, modify `src/server.js` and restart with `npm run dev`
+3. For server changes, modify `src/server.js` and restart with `npm run dev`
 4. Static assets are served directly without build process
 5. Don't use scripts in `scripts/` directory as they are for me.
 
