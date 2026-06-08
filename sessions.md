@@ -2,6 +2,22 @@
 
 ---
 
+## Session: 2026-06-08 GMT
+
+### Game File Permissions Audit
+- Checked permissions on all files in `websites/games/`
+- Fixed 5 files with incorrect permissions to `660`:
+  - `Blues_Jam_Gemini.html`: `644` → `660`
+  - `kids_drawing_pad.html`: `771` → `660`
+  - `kitten-pop-bugs.html`: `644` → `660`
+  - `minecraft_command_builder_chatgpt.html`: `644` → `660`
+  - `minecraft-command-builder-claude.html`: `644` → `660`
+
+### Committed & Pushed
+- Commit `7cfed73` — Remove executable bit from kids_drawing_pad.html
+
+---
+
 ## Session: 2026-06-07 GMT
 
 ### New Games Review & Fix
