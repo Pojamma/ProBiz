@@ -2,6 +2,19 @@
 
 ---
 
+## Session: 2026-06-07 GMT
+
+### New Games Review & Fix
+- Reviewed 3 new games added by user: Kitten Pop Bugs, Minecraft Command Builder (Claude), Minecraft Command Builder (ChatGPT)
+- Fixed typo in `index.html`: `catagory` → `category` on the Kitten Pop Bugs entry
+- Fixed incorrect paths for both Minecraft entries: added missing `games/` prefix
+- All three game files are well-structured, self-contained HTML apps
+
+### Committed & Pushed
+- Commit `efa1912` — Add kitten pop bugs and minecraft command builder games
+
+---
+
 ## Session: 2026-03-27 GMT
 
 ### SunCalc Removal
