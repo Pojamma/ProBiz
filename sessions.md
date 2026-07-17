@@ -2,6 +2,20 @@
 
 ---
 
+## Session 2026-07-17 15:30 PDT
+
+### Post-Migration Cleanup
+- Created minimal "Welcome to ProBiz" landing page at `websites/main/public/index.html`
+- Deployed new landing page to ProBiz server (144.24.7.55)
+- Removed old game/app files from ProBiz server (`websites/games/`, `EJ-EV/`, `utility/`, `shared/`)
+- Updated `CLAUDE.md` to reflect that ProBiz is now a minimal landing page server (removed all game/app/shared resource docs, updated architecture section)
+- Updated home `~/CLAUDE.md` to add DisCen project entry and update ProBiz description
+
+### Commits
+- `d308a7b` — Add minimal ProBiz landing page
+
+---
+
 ## Session 2026-07-17 14:50 PDT
 
 ### Migration to DisCen
