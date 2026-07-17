@@ -1,9 +1,0 @@
-amount
-charge
-discount
-payment
-save
-check
-checks
-money
-loan

@@ -2,6 +2,33 @@
 
 ---
 
+## Session 2026-07-17 14:50 PDT
+
+### Migration to DisCen
+
+Migrated all web applications from ProBiz to a new DisCen (Distraction Central) project on a larger Oracle A1 ARM instance (129.146.103.78, 6GB RAM).
+
+**What moved to DisCen:**
+- `websites/` (~31MB) — main portal, games, EJ-EV educational tools, utilities
+- `shared/` (~1.5MB) — CSS, JS libraries (p5.js, Eruda)
+
+**What stayed in ProBiz:**
+- `src/server.js` — minimal health-check server
+- `scripts/`, `nginx_copy/` — legacy deployment scripts and reference configs
+- Git history, `sessions.md`, `CLAUDE.md`
+
+**DisCen server setup:**
+- Node.js v24.18, Nginx 1.20.1, Certbot 3.1.0, Fail2Ban
+- SSL cert for `distractioncentral.duckdns.org` (expires 2026-10-15)
+- Systemd service for Node.js health check
+- SELinux configured for nginx to serve from /home/opc/DisCen
+- GitHub repo: https://github.com/Pojamma/DisCen (commit `89851f3`)
+
+**Removed from ProBiz locally:**
+- All contents of `websites/` and `shared/` directories
+
+---
+
 ## Session: 2026-06-08 GMT
 
 ### Game File Permissions Audit
